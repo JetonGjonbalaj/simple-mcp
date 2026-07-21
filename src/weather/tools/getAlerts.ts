@@ -3,9 +3,8 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp";
 import { makeNWSRequest } from "../helpers/makeNWSRequest.js";
 import { AlertsResponse } from "../interfaces/index.js";
 import { formatAlert } from "../helpers/formatAlert.js";
-import { NWS_API_BASE } from "../consts/index.js";
 
-export const registerTool = (server: McpServer): void => {
+export const registerGetAlertTool = (server: McpServer): void => {
   server.registerTool(
     "get_alerts",
     {

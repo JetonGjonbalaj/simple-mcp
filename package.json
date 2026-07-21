@@ -2,7 +2,9 @@
   "bin": {
     "weather": "build/weather/index.js"
   },
-  "files": ["build"],
+  "files": [
+    "build"
+  ],
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0",
     "zod": "^3.25.76"
@@ -12,7 +14,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && chmod 755 ./build/weather/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

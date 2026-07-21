@@ -1,10 +1,9 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp";
 import z from "zod";
-import { NWS_API_BASE } from "../consts/index.js";
 import { makeNWSRequest } from "../helpers/makeNWSRequest.js";
 import { ForecastPeriod, ForecastResponse, PointsResponse } from "../interfaces/index.js";
 
-export const registerTool = (server: McpServer): void => {
+export const registerGetForecastTool = (server: McpServer): void => {
   server.registerTool(
     "get_forecast",
     {
