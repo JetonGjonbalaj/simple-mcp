@@ -1,4 +1,4 @@
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp";
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { registerGetAlertTool } from "../tools/getAlerts.js";
 import { registerGetForecastTool } from "../tools/getForecast.js";
 

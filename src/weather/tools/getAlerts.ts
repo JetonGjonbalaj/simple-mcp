@@ -1,5 +1,5 @@
 import z from "zod";
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp";
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { makeNWSRequest } from "../helpers/makeNWSRequest.js";
 import { AlertsResponse } from "../interfaces/index.js";
 import { formatAlert } from "../helpers/formatAlert.js";

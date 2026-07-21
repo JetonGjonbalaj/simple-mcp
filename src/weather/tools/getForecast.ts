@@ -1,4 +1,4 @@
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp";
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import z from "zod";
 import { makeNWSRequest } from "../helpers/makeNWSRequest.js";
 import { ForecastPeriod, ForecastResponse, PointsResponse } from "../interfaces/index.js";
