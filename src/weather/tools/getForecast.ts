@@ -2,6 +2,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import z from "zod";
 import { makeNWSRequest } from "../helpers/makeNWSRequest.js";
 import { ForecastPeriod, ForecastResponse, PointsResponse } from "../interfaces/index.js";
+import { NWS_API_BASE } from "../consts/index.js";
 
 export const registerGetForecastTool = (server: McpServer): void => {
   server.registerTool(
@@ -22,7 +23,7 @@ export const registerGetForecastTool = (server: McpServer): void => {
       },
     },
     async ({ latitude, longitude }) => {
-      const pointsUrl = `/points/${latitude.toFixed(4)},${longitude.toFixed(4)}`;
+      const pointsUrl = `${NWS_API_BASE}/points/${latitude.toFixed(4)},${longitude.toFixed(4)}`;
       const pointsData = await makeNWSRequest<PointsResponse>(pointsUrl);
 
       if (!pointsData) {

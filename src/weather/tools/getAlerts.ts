@@ -3,6 +3,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { makeNWSRequest } from "../helpers/makeNWSRequest.js";
 import { AlertsResponse } from "../interfaces/index.js";
 import { formatAlert } from "../helpers/formatAlert.js";
+import { NWS_API_BASE } from "../consts/index.js";
 
 export const registerGetAlertTool = (server: McpServer): void => {
   server.registerTool(
@@ -18,7 +19,7 @@ export const registerGetAlertTool = (server: McpServer): void => {
     },
     async ({ state }) => {
       const stateCode = state.toUpperCase();
-      const alertsUrl = `/alerts?area=${stateCode}`;
+      const alertsUrl = `${NWS_API_BASE}/alerts?area=${stateCode}`;
       const alertsData = await makeNWSRequest<AlertsResponse>(alertsUrl);
 
       if (!alertsData) {

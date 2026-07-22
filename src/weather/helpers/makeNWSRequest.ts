@@ -6,7 +6,7 @@ export const makeNWSRequest = async <T>(url: string): Promise<T | null> => {
   };
 
   try {
-    const response = await fetch(`${NWS_API_BASE}/${url}`, { headers });
+    const response = await fetch(url, { headers });
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
